@@ -43,17 +43,15 @@ mkosi
 -  Creates: disk images
 -  Implemented in: Python
 
-The mkosi tool originates from the systemd project and was originally
-created to simplify making opinionated “legacy-free” images for systemd
-development. The term “legacy-free” indicates that images are UEFI-only,
-formatted as GPT disks with no protective MBR, use systemd-boot as the
-UEFI boot manager with boot entries configured using the `bootloader
-specification <https://systemd.io/BOOT_LOADER_SPECIFICATION/>`__, and
-partitions labeled with UUIDs per the `discoverable partition
-specification <https://systemd.io/DISCOVERABLE_PARTITIONS/>`__. Images
-are built from scratch, but through leveraging systemd tooling, image
-builds take less time than contemporaries (around 3-8 minutes) at the
-cost of some flexibility.
+The mkosi tool originates from the systemd project and was originally created to
+simplify making opinionated “legacy-free” images for systemd development, but
+has since changed its byline to building “bespoke OS images”. It supports images
+for both UEFI—supporting either systemd-boot and grub and SecureBoot with and
+with shim—and BIOS systems and various outputs formats including GPT disk
+images, directories, unified kernel images (UKIs), systemd portable services,
+sysexts and confexts. Images are built from scratch, but through leveraging
+systemd tooling, image builds take less time than contemporaries (around 3-8
+minutes) at the cost of some flexibility.
 
 virt-builder / virt-install (libguestfs)
 ========================================
